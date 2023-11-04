@@ -9,11 +9,13 @@ app.use(express.json());
 app.use('/',router);
 
 
+// Middleware para definir o tipo MIME correto para arquivos JavaScript
+app.use('../public/script', (req, res, next) => {
+  res.setHeader('Content-Type', 'text/javascript');
+  next();
+});
 
-app.get('/', (req, res) => {
-    res.send('Servidor Express funcionando!');
-  });
   
-  app.listen(port, () => {
-    console.log(`Servidor rodando na porta ${port}`);
-  });
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
+});
