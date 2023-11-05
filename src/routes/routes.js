@@ -17,7 +17,6 @@ router.get('/cadastrar', (req, res) =>{
 
 router.get('/api/lagrimas', LagrimaController.getLagrimas);
 
-
-
+router.post('/api/newlagrimas', LagrimaController.createLagrima);
 
 module.exports =router;

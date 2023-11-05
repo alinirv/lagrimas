@@ -1,7 +1,3 @@
-//Função cadastrar
-
-
-
 // Função para criar um elemento de card para uma lágrima
 function criarCardLagrima(lagrima) {
   const card = document.createElement("div");
