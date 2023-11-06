@@ -23,4 +23,6 @@ router.get('/api/lagrimas/:id', LagrimaController.getLagrimaById);
 
 router.put('/api/editlagrimas/:id', LagrimaController.updateLagrima);
 
+router.delete('/api/deletelagrimas/:id', LagrimaController.deleteLagrima);
+
 module.exports =router;
