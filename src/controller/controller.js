@@ -7,28 +7,28 @@ exports.getLagrimas = (req, res) => {
 
 exports.createLagrima = (req, res) => {
   const lagrima = {
-      id: Date.now(),
-      nome: req.body.nome,
-      categoria: req.body.categoria,
-      autor: req.body.autor
+    id: Date.now(),
+    nome: req.body.nome,
+    categoria: req.body.categoria,
+    autor: req.body.autor
   };
 
   lagrimas.push(lagrima);
 
   fs.writeFile("src/model/lagrimas.json", JSON.stringify(lagrimas), (err) => {
-      if (err) return res.status(500).send("Error writing file.");
-      res.json(lagrima);
+    if (err) return res.status(500).send("Error writing file.");
+    res.json(lagrima);
   });
 };
 
 exports.getLagrimaById = (req, res) => {
   const id = req.params.id;
   const lagrima = lagrimas.find(l => l.id === parseInt(id));
- 
+
   if (!lagrima) return res.status(404).send("Lagrima not found");
- 
+
   res.json(lagrima);
- };
+};
 
 exports.updateLagrima = (req, res) => {
   const id = req.params.id;
@@ -40,7 +40,22 @@ exports.updateLagrima = (req, res) => {
   lagrimas[index] = lagrima;
 
   fs.writeFile("src/model/lagrimas.json", JSON.stringify(lagrimas), (err) => {
-      if (err) return res.status(500).send("Erro ao gravar arquivo.");
-      res.json(lagrima);
+    if (err) return res.status(500).send("Erro ao gravar arquivo.");
+    res.json(lagrima);
+  });
+};
+
+exports.deleteLagrima = (req, res) => {
+  const id = req.params.id;
+  const lagrima = lagrimas.find(l => l.id === parseInt(id));
+
+  if (!lagrima) return res.status(404).send("Lagrima não encontrada");
+
+  const index = lagrimas.indexOf(lagrima);
+  lagrimas.splice(index, 1);
+
+  fs.writeFile("src/model/lagrimas.json", JSON.stringify(lagrimas), (err) => {
+    if (err) return res.status(500).send("Erro ao gravar arquivo.");
+    res.json(lagrima);
   });
 };
