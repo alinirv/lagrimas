@@ -7,11 +7,12 @@ function criarCardLagrima(lagrima) {
         <h3>${lagrima.nome}</h3>
         <p>Categoria: ${lagrima.categoria}</p>
         <p>Autor: ${lagrima.autor}</p>
+        <a href="/lagrima">Editar</a>
     `;
 
   return card;
 }
-
+// função retorna todas as lagrimas
 function getLagrimas() {
   fetch("/api/lagrimas")
     .then((response) => response.json())

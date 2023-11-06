@@ -7,8 +7,8 @@ router.get('/', (req, res) =>{
     res.sendFile('index.html', {root:'public'})
 })
 
-router.get('/listar', (req, res) =>{
-    res.sendFile('listar.html', {root:'src/views'})
+router.get('/lagrima', (req, res) =>{
+    res.sendFile('lagrima.html', {root:'src/views'})
 })
 
 router.get('/cadastrar', (req, res) =>{
