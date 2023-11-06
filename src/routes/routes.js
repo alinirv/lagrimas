@@ -19,4 +19,8 @@ router.get('/api/lagrimas', LagrimaController.getLagrimas);
 
 router.post('/api/newlagrimas', LagrimaController.createLagrima);
 
+router.get('/api/lagrimas/:id', LagrimaController.getLagrimaById);
+
+router.put('/api/editlagrimas/:id', LagrimaController.updateLagrima);
+
 module.exports =router;

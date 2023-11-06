@@ -11,25 +11,26 @@
     </header>
     <div class="container">
         
-        <form id="cadastrar-form" action="" method="post">
+        <form id="cadastrar-form" action="" method="put">
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required>
             </div>
             <div class="form-group">
                 <label for="categoria">Categoria:</label>
-                <input type="text" id="categoria" name="categoria" required>
+                <input type="text" id="categoria" name="categoria" required value="">
             </div>
             <div class="form-group">
                 <label for="autor">Autor:</label>
-                <input type="text" id="autor" name="autor" required>
+                <input type="text" id="autor" name="autor" required value="">
             </div>
 
             <button id="cadastrar-button">Editar</button>
-            <button id="cadastrar-button">Excluir</button>
+            <button id="cadastrar-button" onclick="deleteLagrima(id)">Excluir</button>
 
             <a href="/">Voltar</a>
         </form>
     </div>
+    <script src="script/editar.js"></script>
 </body>
 </html>

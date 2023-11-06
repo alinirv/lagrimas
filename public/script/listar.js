@@ -7,7 +7,7 @@ function criarCardLagrima(lagrima) {
         <h3>${lagrima.nome}</h3>
         <p>Categoria: ${lagrima.categoria}</p>
         <p>Autor: ${lagrima.autor}</p>
-        <a href="/lagrima">Editar</a>
+        <a href="/lagrima?id=${lagrima.id} ">Editar</a>
     `;
 
   return card;
