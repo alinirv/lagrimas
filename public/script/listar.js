@@ -1,15 +1,14 @@
 // Função para criar um elemento de card para uma lágrima
 function criarCardLagrima(lagrima) {
   const card = document.createElement("div");
-  card.classList.add("card");
+  card.classList.add("lagrima-card");
 
   card.innerHTML = `
         <h3>${lagrima.nome}</h3>
-        <p>Categoria: ${lagrima.categoria}</p>
-        <p>Autor: ${lagrima.autor}</p>
+        <p>Categoria: ${lagrima.categoria}</p><br>
+        <p>Autor: ${lagrima.autor}</p><br>
         <a href="/lagrima?id=${lagrima.id} ">Editar</a>
     `;
-
   return card;
 }
 // função retorna todas as lagrimas
